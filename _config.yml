@@ -1,0 +1,32 @@
+title: JP Music Research - Algorithmic Compositions
+description: "Structural compositions based on Japanese folk music theory"
+author: "Tanaka AI Research Team"
+baseurl: ""
+url: "https://your-github-username.github.io/jpmusicresearch-compositions"
+
+# Jekyll settings
+theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# Collections
+collections:
+  compositions:
+    output: true
+    permalink: /compositions/:path/
+
+# Default layout
+defaults:
+  - scope:
+      path: ""
+      type: "compositions"
+    values:
+      layout: "composition"
+
+# Exclude
+exclude:
+  - .gitignore
+  - README.md
+  - Gemfile
+  - Gemfile.lock

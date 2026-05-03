@@ -1,0 +1,140 @@
+---
+layout: default
+---
+
+<article class="composition">
+  <header class="composition-header">
+    <h1>{{ page.title }}</h1>
+    <p class="meta">{{ page.date | date: "%Y-%m-%d" }}</p>
+  </header>
+
+  <div class="composition-content">
+    <!-- Description -->
+    <section class="description">
+      <h2>Concept</h2>
+      <p>{{ page.concept }}</p>
+    </section>
+
+    <!-- Score -->
+    {% if page.score %}
+    <section class="score">
+      <h2>Score</h2>
+      <div class="score-embed">
+        <a href="{{ '/assets/scores/' | relative_url }}{{ page.score }}" target="_blank">
+          <img src="{{ '/assets/scores/' | relative_url }}{{ page.score | replace: '.pdf', '.png' }}" alt="Score">
+        </a>
+      </div>
+      <p><a href="{{ '/assets/scores/' | relative_url }}{{ page.score }}" class="btn btn-primary">Download PDF</a></p>
+    </section>
+    {% endif %}
+
+    <!-- Audio -->
+    {% if page.audio %}
+    <section class="audio">
+      <h2>Audio</h2>
+      <audio controls style="width: 100%; max-width: 500px;">
+        <source src="{{ '/assets/audio/' | relative_url }}{{ page.audio }}" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+      <p><a href="{{ '/assets/audio/' | relative_url }}{{ page.audio }}" class="btn btn-primary">Download MP3</a></p>
+    </section>
+    {% endif %}
+
+    <!-- References -->
+    {% if page.references %}
+    <section class="references">
+      <h2>References</h2>
+      <ul>
+        {% for ref in page.references %}
+        <li>{{ ref }}</li>
+        {% endfor %}
+      </ul>
+    </section>
+    {% endif %}
+
+    <!-- MIDI -->
+    {% if page.midi %}
+    <section class="midi">
+      <h2>MIDI</h2>
+      <p><a href="{{ '/assets/midi/' | relative_url }}{{ page.midi }}" class="btn btn-secondary">Download MIDI</a></p>
+    </section>
+    {% endif %}
+  </div>
+</article>
+
+<style>
+.composition {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+}
+
+.composition-header {
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 1rem;
+  margin-bottom: 2rem;
+}
+
+.composition-header h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+.composition-header .meta {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.composition-content section {
+  margin-bottom: 2rem;
+}
+
+.composition-content h2 {
+  font-size: 1.3rem;
+  color: #333;
+  border-left: 3px solid #007bff;
+  padding-left: 1rem;
+}
+
+.score-embed {
+  margin: 1rem 0;
+}
+
+.score-embed img {
+  max-width: 100%;
+  border: 1px solid #ddd;
+  padding: 10px;
+}
+
+audio {
+  margin: 1rem 0;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  margin-right: 0.5rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+.btn-secondary {
+  background-color: #6c757d;
+  color: white;
+}
+
+.btn-secondary:hover {
+  background-color: #545b62;
+}
+</style>
