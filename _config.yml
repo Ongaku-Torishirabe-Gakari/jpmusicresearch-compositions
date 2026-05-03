@@ -1,8 +1,8 @@
 title: JP Music Research - Algorithmic Compositions
 description: "Structural compositions based on Japanese folk music theory"
 author: "Tanaka AI Research Team"
-baseurl: ""
-url: "https://your-github-username.github.io/jpmusicresearch-compositions"
+baseurl: "/jpmusicresearch-compositions"
+url: "https://Ongaku-Torishirabe-Gakari.github.io"
 
 # Jekyll settings
 theme: minima
