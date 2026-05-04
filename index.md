@@ -10,18 +10,19 @@ A research project exploring **structural composition methods based on Japanese 
 ## Methodology
 
 These compositions are created using:
-- **SuperCollider** for sound design and acoustic parameter generation
 - **LilyPond** for notation and symbolic representation
-- **Python** for algorithmic composition control
+- **FluidSynth** for MIDI-to-audio rendering
+- **SuperCollider** (planned) for acoustic parameter generation
 - **Music theory** grounded in monophonic structure analysis
 
 ## Recent Compositions
 
-{% for comp in site.compositions | sort: 'date' | reverse | limit: 5 %}
-- [{{ comp.title }}]({{ comp.url }}) — {{ comp.date | date: "%Y-%m-%d" }}
+{% assign recent = site.posts | limit: 5 %}
+{% for post in recent %}
+- [{{ post.title }}]({{ post.url | relative_url }}) — {{ post.date | date: "%Y-%m-%d" }}
 {% endfor %}
 
-[View All →](./all.html)
+[View All →]({{ '/all/' | relative_url }})
 
 ## About
 
