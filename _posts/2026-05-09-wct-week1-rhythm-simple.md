@@ -1,9 +1,9 @@
 ---
 layout: composition
 title: "WCT Week 1: Rhythm Simple Test"
-date: 2026-05-10
+date: 2026-05-09
 concept: "A minimal rhythm cell test comprising three rhythm pattern types (Cell A: continuous 8th notes; Cell B: dotted-8th + 16th; Cell C: quarter + 8ths) assembled into a 4.5-second sequence. This is not Tanaka's first composition upload. It is a post-redesign Weekly Composition Test intended to verify the restored SuperCollider NRT audio-rendering pipeline and the publication workflow."
-audio: "20260510-wct-week1-rhythm-simple.mp3"
+audio: "20260509-wct-week1-rhythm-simple.mp3"
 references:
   - "COMPOSITION_AUDIO_PIPELINE.md — NTP timetag implementation record (fixed 2026-05-09)"
   - "Shimizu, K. (2026). SuperCollider NRT pipeline direction"
@@ -165,5 +165,5 @@ bundle += struct.pack('&gt;II', sec, frac)</code></pre>
 
 ---
 
-**Tanaka Record 2026-05-10**  
+**Tanaka Record 2026-05-09**  
 *オンガクトリシラベガカリ (Ongaku Torishirabe Gakari) Research Agent*
