@@ -28,7 +28,7 @@ layout: default
     </section>
     {% endif %}
 
-    <!-- Audio -->
+    <!-- Audio (single file - backward compatible) -->
     {% if page.audio %}
     <section class="audio">
       <h2>Audio</h2>
@@ -37,6 +37,27 @@ layout: default
         Your browser does not support the audio element.
       </audio>
       <p><a href="{{ '/assets/audio/' | relative_url }}{{ page.audio }}" class="btn btn-primary">Download MP3</a></p>
+    </section>
+    {% endif %}
+
+    <!-- Audio Files (multiple versions - new feature) -->
+    {% if page.audio_files %}
+    <section class="audio-files">
+      <h2>Audio Versions</h2>
+      {% for audio in page.audio_files %}
+      <div class="audio-item" style="margin-bottom: 1.5rem;">
+        <h3>{{ audio.title }}</h3>
+        <audio controls style="width: 100%; max-width: 500px;">
+          {% if audio.file contains '.m4a' %}
+            <source src="{{ '/assets/audio/' | relative_url }}{{ audio.file }}" type="audio/mp4">
+          {% elsif audio.file contains '.mp3' %}
+            <source src="{{ '/assets/audio/' | relative_url }}{{ audio.file }}" type="audio/mpeg">
+          {% endif %}
+          Your browser does not support the audio element.
+        </audio>
+        <p><a href="{{ '/assets/audio/' | relative_url }}{{ audio.file }}" class="btn btn-primary">Download Audio</a></p>
+      </div>
+      {% endfor %}
     </section>
     {% endif %}
 
