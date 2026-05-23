@@ -2,6 +2,8 @@
 layout: composition
 title: "WCT Week 3: Binary Duration Cell Comparison"
 date: 2026-05-23
+concept: |
+  This test is not intended as a finished musical work, but as an audio experiment comparing binary-duration cell structures. Duration sequences were extracted from lyric-aligned Japanese folk song MIDI event data. Based on nPVI analysis and duration classification, this test focuses only on binary-duration cells. Type A repeats the same cell, while Type B uses a cell sequence containing duration differences. Both types use the same pitch sequence and the same number of notes, but their total durations are not normalized.
 audio_files:
   - title: "Type A: Repeated Identical Cells"
     file: "wct_week3_binary_duration_cell_type_a.m4a"
